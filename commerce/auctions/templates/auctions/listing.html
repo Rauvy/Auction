@@ -1,0 +1,41 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block head %}
+    <link href="{% static 'auctions/listing.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <h2>Listing: {{ listing.title }}</h2>
+    <img src="{{ listing.image.url }}" alt="{{ listing.title }} image">
+    <p>{{ listing.description }}</p>
+    <h3>Bid: ${{ listing.current_bid }}</h3>
+    <small>{{ listing.bids.count }} bids so far</small>
+    {% if user.is_authenticated and not user_is_owner %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="number" placeholder="Bid" name="bid_amount">
+            <input type="submit" name="Place Bid">
+        </form>
+    {% elif user_is_owner %}
+        <p>You cannot bid on your own listing.</p>
+    {% endif %}
+    <h3>Details:</h3>
+    <ul id="listing">
+        <li>Listed by: {{ listing.user.username }}</li>
+        <li>Category: {{ listing.category }}</li>
+    </ul>
+    {% if user.is_authenticated and not user_is_owner %}
+        {% if listing in user.watchlist.listings.all %}
+            <form action="{% url 'remove_from_watchlist' listing.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Remove from Watchlist</button>
+            </form>
+        {% else %}
+            <form action="{% url 'add_to_watchlist' listing.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Add to Watchlist</button>
+            </form>
+        {% endif %}
+    {% endif %}
+{% endblock %}

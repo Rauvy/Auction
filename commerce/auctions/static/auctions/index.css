@@ -1,0 +1,52 @@
+/* CSS for Active Listings Page */
+.listings {
+    display: flex; /* Arrange items horizontally */
+    align-items: flex-start; /* Align items to the top */
+    border: 1px solid #ddd; /* Light border around each listing */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 15px; /* Space inside each listing */
+    margin: 10px 0; /* Space between listings */
+    background-color: #f9f9f9; /* Light background color */
+    transition: box-shadow 0.3s ease; /* Smooth transition effect */
+}
+
+.listings:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+}
+
+.listings img {
+    width: 100px; /* Fixed width for images */
+    height: 100px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    margin-right: 15px; /* Space between image and text */
+}
+
+/* New container to hold the title, price, and description in a column */
+.listing-info {
+    display: flex;
+    flex-direction: column; /* Arrange title, price, and description in a column */
+}
+
+.listing-info h3 {
+    font-size: 18px; /* Font size for the listing title */
+    color: #007bff; /* Link color for the title */
+    margin: 0 0 5px; /* Space below the title */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.listing-info h3:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+.listing-info b {
+    font-size: 16px; /* Font size for the price */
+    color: #333; /* Text color for the price */
+    margin: 0 0 8px; /* Space below the price */
+}
+
+.listing-info p {
+    margin: 0; /* Remove default margin from description */
+    font-size: 14px; /* Font size for description text */
+    color: #666; /* Text color for description */
+}

@@ -1,0 +1,46 @@
+/* CSS for the Categories Page */
+body {
+    font-family: Arial, sans-serif; /* Simple and clean font */
+    background-color: #f0f2f5; /* Light background color for the whole page */
+    color: #333; /* Standard text color */
+}
+
+#categoryh {
+    text-align: center; /* Center the heading */
+    color: #007bff; /* Blue color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+#categoryu {
+    list-style-type: none; /* Remove default list bullet points */
+    padding: 0; /* Remove default padding from the list */
+}
+
+#categoryl {
+    background-color: #ffffff; /* White background for each category item */
+    padding: 15px; /* Space inside each list item */
+    margin: 10px auto; /* Space between each list item */
+    max-width: 600px; /* Limit the width of the list items */
+    border: 1px solid #ddd; /* Light border around each item */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    text-align: center; /* Center the text inside each item */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#categoryl:hover {
+    transform: translateY(-5px); /* Lift the item slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    background-color: #f9f9f9; /* Light gray background on hover */
+}
+
+#categoryl a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Blue color for category links */
+    font-weight: bold; /* Bold font for category names */
+}
+
+#categoryl a:hover {
+    color: #0056b3; /* Darker blue color on hover */
+}

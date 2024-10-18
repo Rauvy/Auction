@@ -1,0 +1,15 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block head %}
+    <link href="{% static 'auctions/category.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <h2 id="categoryh">Categories: </h2>
+    <ul id="categoryu">
+        {% for category in categories %}
+            <li id="categoryl"><a href="{% url 'listing_in_category' category.name %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
